@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import CopyEmailButton from '@/components/CopyEmailButton'
 import './home.css'
 
 export default function HomePage() {
@@ -14,9 +15,8 @@ export default function HomePage() {
             <span className="status">Available · Summer &apos;26</span>
           </div>
           <div className="group desktop">
-            <span>Based · Lisbon, PT</span>
-            <span>18:45 UTC</span>
-            <span>47°N · 9°W</span>
+            <span>Based in Ukraine</span>
+            <span>Kyiv Time / GMT+3</span>
           </div>
         </div>
 
@@ -42,16 +42,7 @@ export default function HomePage() {
               <div className="k">Currently</div>
               <div className="v">Available for new work</div>
             </div>
-            <div className="cell">
-              <div className="k">Index</div>
-              <div className="v">06 / 06 cases</div>
-            </div>
           </div>
-        </div>
-
-        <div className="scroll-cue">
-          <span>Scroll</span>
-          <span className="line"></span>
         </div>
       </header>
 
@@ -282,13 +273,6 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-
-        <div className="view-all">
-          <Link className="link hoverable" href="/projects" data-magnetic="">
-            View all projects
-            <span className="arrow">↗</span>
-          </Link>
-        </div>
       </section>
 
       {/* ABOUT */}
@@ -298,7 +282,7 @@ export default function HomePage() {
           <div className="mono-frame">
             <div className="initials">Ab</div>
           </div>
-          <div className="label">Lisbon · 2026</div>
+          <div className="label">Ukraine · 2026</div>
         </div>
 
         <div>
@@ -361,46 +345,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* RECOGNITION */}
-      <section className="recognition">
-        <div className="sec-head" style={{ padding: '0 0 20px' }}>
-          <div className="lhs">
-            <span className="num">03 / RECOGNITION</span>
-            <h2 className="reveal" style={{ fontSize: 'clamp(28px,3.2vw,44px)' }}>
-              Selected <em>press &amp; awards</em>
-            </h2>
-          </div>
-          <div className="rhs reveal d1">A short list</div>
-        </div>
-        <div className="rec-grid">
-          <div className="rec reveal">
-            <div className="when">2025</div>
-            <div className="what">Site of the Day</div>
-            <div className="who">Awwwards</div>
-          </div>
-          <div className="rec reveal d1">
-            <div className="when">2025</div>
-            <div className="what">FWA of the Day</div>
-            <div className="who">The FWA</div>
-          </div>
-          <div className="rec reveal d2">
-            <div className="when">2024</div>
-            <div className="what">Design Team of the Year — Finalist</div>
-            <div className="who">Fast Company Innovation</div>
-          </div>
-          <div className="rec reveal d3">
-            <div className="when">2024</div>
-            <div className="what">Featured interview</div>
-            <div className="who">Sidebar · Mindsparkle</div>
-          </div>
-        </div>
-      </section>
-
       {/* CONTACT */}
       <section id="contact" className="contact">
         <div className="contact-bg"></div>
         <div className="contact-inner">
-          <div className="eyebrow reveal">04 / CONTACT</div>
+          <div className="eyebrow reveal">03 / CONTACT</div>
           <h2 className="reveal d1">
             Let&apos;s make
             <br />
@@ -408,21 +357,10 @@ export default function HomePage() {
             <br />
             and <em>considered</em>.
           </h2>
-          <a
+          <CopyEmailButton
+            email="bovt.anastasia.ux@gmail.com"
             className="email hoverable reveal d2"
-            href="mailto:hello@bovt.design"
-            data-magnetic=""
-          >
-            hello@bovt.design
-            <span className="arr">↗</span>
-          </a>
-          <div className="contact-row reveal d3">
-            <a href="#">Twitter ↗</a>
-            <a href="#">LinkedIn ↗</a>
-            <a href="#">Read.cv ↗</a>
-            <a href="#">Are.na ↗</a>
-            <a href="#">Dribbble ↗</a>
-          </div>
+          />
         </div>
       </section>
     </>

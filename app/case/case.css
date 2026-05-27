@@ -139,7 +139,8 @@
 }
 .cs-toc {
   position: sticky;
-  top: 100px;
+  top: 90px;
+  align-self: start;
   font-family: var(--mono);
   font-size: 12px;
 }
@@ -223,7 +224,6 @@
   line-height: 1.55;
   color: var(--fg-2);
   margin-bottom: 22px;
-  max-width: 66ch;
   text-wrap: pretty;
 }
 .cs-article p.lede {
@@ -278,28 +278,27 @@
   margin: 12px 0 28px;
 }
 .cs-article ul li {
-  display: grid;
-  grid-template-columns: 32px 1fr;
+  display: flex;
+  gap: 16px;
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
   font-size: 16px;
   color: var(--fg-2);
   line-height: 1.5;
-  gap: 12px;
+  width: 100%;
 }
 .cs-article ul li::before {
   content: "→";
   color: var(--accent);
   font-family: var(--mono);
+  flex-shrink: 0;
 }
 .cs-article ul li strong { color: var(--fg); font-weight: 500; }
 
 /* Figure */
 .cs-article figure {
   margin: 40px 0;
-  max-width: none;
-  width: calc(100% + 160px);
-  margin-left: -80px;
+  width: 100%;
 }
 .cs-article figure .img {
   aspect-ratio: 16/10;
@@ -450,8 +449,7 @@
 @media (max-width: 960px) {
   .cs-head { grid-template-columns: 1fr; }
   .cs-layout { grid-template-columns: 1fr; gap: 40px; }
-  .cs-toc { position: relative; top: auto; }
-  .cs-article figure { width: 100%; margin-left: 0; }
+  .cs-toc { position: static; }
   .results-band { grid-template-columns: 1fr; gap: 28px; }
   .next-cs { grid-template-columns: 1fr; }
   .next-cs .preview { width: 100%; }

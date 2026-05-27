@@ -48,8 +48,12 @@ html[data-theme="light"] {
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html, body {
+html {
   background: var(--bg);
+  overflow-x: clip;
+}
+
+body {
   color: var(--fg);
   font-family: var(--sans);
   font-feature-settings: "ss01", "cv11";
@@ -58,7 +62,7 @@ html, body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.005em;
-  overflow-x: hidden;
+  background: var(--bg);
 }
 
 body {

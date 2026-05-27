@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import CopyEmailButton from './CopyEmailButton'
 
 export default function Nav() {
   return (
@@ -11,12 +12,9 @@ export default function Nav() {
       <div className="nav-links">
         <Link href="/#work">Work</Link>
         <Link href="/#about">About</Link>
-        <Link href="/projects">Index</Link>
         <Link href="/#contact">Contact</Link>
       </div>
-      <Link className="nav-cta hoverable" href="/#contact" data-magnetic="">
-        Let&apos;s talk <span className="arr">↗</span>
-      </Link>
+      <CopyEmailButton email="bovt.anastasia.ux@gmail.com" />
     </nav>
   )
 }
