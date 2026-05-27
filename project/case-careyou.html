@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Care You — Anastasia Bovt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css" />
+<link rel="stylesheet" href="case.css" />
+</head>
+<body class="cursor-on" data-hero="spotlight" data-layout="grid" data-screen-label="Case · Care You">
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html"><span class="dot"></span><span>Anastasia Bovt</span><span class="role">— Product Designer</span></a>
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="projects.html">Index</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <a class="nav-cta hoverable" href="index.html#contact" data-magnetic>Let's talk <span class="arr">↗</span></a>
+</nav>
+
+<header class="cs-head">
+  <div>
+    <div class="breadcrumb">
+      <a href="projects.html">Index</a><span>/</span><span>Case 06</span><span>/</span><span style="color:var(--fg)">Care You</span>
+    </div>
+    <h1 class="reveal">Coordination,<br>not <em>features</em>.</h1>
+    <p class="sub reveal d1">A healthcare platform connecting patients, carers, clinicians, and insurers — designed to reduce hospital readmissions during the highest-risk period: home care after discharge.</p>
+  </div>
+  <div class="meta reveal d2">
+    <div class="cell"><div class="k">Client</div><div class="v">Care You</div></div>
+    <div class="cell"><div class="k">Year</div><div class="v">2022</div></div>
+    <div class="cell"><div class="k">Role</div><div class="v">UI/UX Designer</div></div>
+    <div class="cell"><div class="k">Platforms</div><div class="v">iOS · Android · Web</div></div>
+    <div class="cell"><div class="k">Scope</div><div class="v">Multi-role end-to-end · Admin · System</div></div>
+    <div class="cell"><div class="k">Outcome</div><div class="v">Four roles · One coordination layer</div></div>
+  </div>
+</header>
+
+<section class="cs-hero">
+  <div class="frame reveal">
+    <div class="glow fresh"></div>
+    <div class="chrome-lg">
+      <div class="tbar"><i></i><i></i><i></i><span class="url">careyou.health/network/sarah-l</span></div>
+      <div class="app" style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="hd" style="font-size:28px">Sarah L.<br><em style="font-size:0.6em;color:rgba(255,255,255,0.55)">Post-discharge · day 4</em></div>
+          <div style="height:1px;background:rgba(255,255,255,0.08)"></div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <span style="padding:5px 10px;border-radius:999px;background:rgba(122,255,196,0.12);color:#7affc4;font-family:var(--mono);font-size:10px">Patient</span>
+            <span style="padding:5px 10px;border-radius:999px;background:rgba(167,139,255,0.12);color:var(--accent);font-family:var(--mono);font-size:10px">Carer</span>
+            <span style="padding:5px 10px;border-radius:999px;background:rgba(107,197,255,0.12);color:#6bc5ff;font-family:var(--mono);font-size:10px">Clinician</span>
+            <span style="padding:5px 10px;border-radius:999px;background:rgba(255,184,106,0.12);color:#ffb86a;font-family:var(--mono);font-size:10px">Insurer</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-rows:1fr 1fr;gap:10px">
+          <div style="border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:14px"><div style="font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px">Tasks today</div><div style="font-family:var(--serif);color:#fff;font-size:22px">4 of 6</div></div>
+          <div style="border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:14px"><div style="font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px">Risk score</div><div style="font-family:var(--serif);color:#7affc4;font-size:22px">Low</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-layout">
+  <aside class="cs-toc">
+    <h5>Contents</h5>
+    <ol>
+      <li><a href="#overview" data-scroll>Overview</a></li>
+      <li><a href="#problem" data-scroll>The problem</a></li>
+      <li><a href="#strategy" data-scroll>Strategy</a></li>
+      <li><a href="#system" data-scroll>System</a></li>
+      <li><a href="#reflection" data-scroll>Reflection</a></li>
+    </ol>
+    <div class="progress-wrap">
+      <div class="progress"><span id="pctLabel">0%</span><span>read</span></div>
+      <div class="bar"></div>
+    </div>
+  </aside>
+
+  <article class="cs-article">
+    <p class="lede reveal">Hospital readmissions within 30 days of discharge are one of the most expensive and preventable problems in healthcare. Most aren't medical failures — they're <em>coordination</em> failures.</p>
+
+    <div class="sec" id="overview">
+      <div class="sec-label">01 — Overview</div>
+      <h2 class="reveal">One platform, four roles.</h2>
+      <p class="reveal">Care You connects patients, carers, clinicians, and insurers in one platform — reducing hospital readmissions by improving coordination during the highest-risk period: post-discharge home care. I designed the entire multi-role mobile experience and admin panel, plus a flexible design system that healthcare organizations could brand without custom development.</p>
+    </div>
+
+    <div class="sec" id="problem">
+      <div class="sec-label">02 — Problem</div>
+      <h2 class="reveal">Existing tools serve <em>one</em> role, not the chain.</h2>
+      <p class="reveal">Patients don't know what to do at home. Carers don't have the right information. Clinicians can't easily monitor risk between appointments.</p>
+      <p class="reveal">Existing tools either serve only clinicians (complex, not patient-friendly) or only patients (disconnected from clinical workflows). Nothing connected all four roles — provider, insurer, patient, and carer — in a shared ecosystem.</p>
+    </div>
+
+    <div class="sec" id="strategy">
+      <div class="sec-label">03 — Strategy</div>
+      <h2 class="reveal">Value lives in <em>coordination</em>.</h2>
+      <p class="reveal">I defined the core product bet early: Care You's value lives in coordination, not features. The platform's job wasn't to add new medical capabilities — it was to make the coordination between existing roles faster, clearer, and less error-prone. That reframing influenced every prioritization decision.</p>
+      <h3>v1 scope</h3>
+      <ul class="reveal">
+        <li><strong>Care network creation.</strong> Connecting patient + carer + clinician in one shared context.</li>
+        <li><strong>Task assignment and tracking.</strong> Daily tasks visible to everyone in the network.</li>
+        <li><strong>Risk assessment questionnaires.</strong> Surfacing risk before it becomes a re-admission.</li>
+        <li><strong>Educational content library.</strong> Discharge instructions, in plain language.</li>
+      </ul>
+      <p class="reveal">I deprioritized real-time monitoring hardware integration for v1 — the software coordination layer had to prove value before adding device complexity.</p>
+    </div>
+
+    <div class="sec" id="system">
+      <div class="sec-label">04 — System</div>
+      <h2 class="reveal">A theming layer, not a fork.</h2>
+      <p class="reveal">For healthcare organizations, the business requirement was clear: branding customization without custom dev work. I designed a theming system that allowed organizations to apply brand colors, logos, and tone of voice across all four role experiences with a single configuration layer.</p>
+
+      <figure class="reveal">
+        <div class="img">
+          <div class="abs-fill" style="background:linear-gradient(135deg,#161a18,#191e1c)"></div>
+          <div class="abs-glow fresh"></div>
+          <div class="abs-card"><div class="placeholder"><small>One config layer</small>Four role surfaces</div></div>
+        </div>
+        <figcaption><span>Fig. 01 — Branding propagates from a single config to all four role surfaces.</span><span>02 / 03</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="sec" id="reflection">
+      <div class="sec-label">05 — Reflection</div>
+      <h2 class="reveal">Re-framing as the <em>first</em> design move.</h2>
+      <p class="reveal">The most consequential decision wasn't a layout, a flow, or a component — it was the reframing of the product's value from features to coordination. Every prioritization argument afterwards became easier because the question stopped being "what's the best feature?" and started being "what would make the chain work?".</p>
+    </div>
+  </article>
+</section>
+
+<a class="next-cs hoverable" href="case-yezzz.html" data-magnetic>
+  <div>
+    <div class="label">Back to start — 01 / 06</div>
+    <div class="title">Yezzz →</div>
+  </div>
+  <div class="preview">
+    <div class="abs-glow violet"></div>
+    <div class="abs-card"><div class="placeholder">Yezzz</div></div>
+  </div>
+</a>
+
+<footer class="footer">
+  <div class="footer-big">Bovt <em>Anastasia</em> — 2026</div>
+  <div class="footer-row">
+    <div class="col"><h5>Index</h5><a href="index.html#work">Work</a><a href="projects.html">All projects</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></div>
+    <div class="col"><h5>Elsewhere</h5><a href="#">Twitter</a><a href="#">LinkedIn</a><a href="#">Read.cv</a><a href="#">Are.na</a></div>
+    <div class="col"><h5>Colophon</h5><span>Set in Instrument Serif & Inter Tight.</span></div>
+    <div class="col" style="text-align:right"><h5>Status</h5><span style="color:var(--fg)">Available · Summer '26</span><br><span>Lisbon, Portugal</span></div>
+  </div>
+</footer>
+
+<script src="case.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

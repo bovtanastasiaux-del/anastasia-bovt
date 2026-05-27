@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tutorly — Anastasia Bovt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css" />
+<link rel="stylesheet" href="case.css" />
+</head>
+<body class="cursor-on" data-hero="spotlight" data-layout="grid" data-screen-label="Case · Tutorly">
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html"><span class="dot"></span><span>Anastasia Bovt</span><span class="role">— Product Designer</span></a>
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="projects.html">Index</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <a class="nav-cta hoverable" href="index.html#contact" data-magnetic>Let's talk <span class="arr">↗</span></a>
+</nav>
+
+<header class="cs-head">
+  <div>
+    <div class="breadcrumb">
+      <a href="projects.html">Index</a><span>/</span><span>Case 03</span><span>/</span><span style="color:var(--fg)">Tutorly</span>
+    </div>
+    <h1 class="reveal">Two products,<br>one <em>infrastructure</em>.</h1>
+    <p class="sub reveal d1">An online learning platform serving students who want to learn and tutors who want to build a business — without bloating the interface for either.</p>
+  </div>
+  <div class="meta reveal d2">
+    <div class="cell"><div class="k">Client</div><div class="v">Tutorly</div></div>
+    <div class="cell"><div class="k">Year</div><div class="v">2023</div></div>
+    <div class="cell"><div class="k">Role</div><div class="v">Lead Product Designer</div></div>
+    <div class="cell"><div class="k">Platforms</div><div class="v">iOS · Android · Web</div></div>
+    <div class="cell"><div class="k">Scope</div><div class="v">End-to-end · System</div></div>
+    <div class="cell"><div class="k">Outcome</div><div class="v">+40% onboarding completion · 50+ components</div></div>
+  </div>
+</header>
+
+<section class="cs-hero">
+  <div class="frame reveal">
+    <div class="glow fresh"></div>
+    <div class="chrome-lg">
+      <div class="tbar"><i></i><i></i><i></i><span class="url">tutorly.app/tutor/home</span></div>
+      <div class="app" style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="hd" style="font-size:28px">Next lesson<br><em style="color:var(--accent)">in 14 min</em></div>
+          <div style="height:1px;background:rgba(255,255,255,0.08)"></div>
+          <div style="height:10px;background:rgba(255,255,255,0.08);border-radius:3px;width:80%"></div>
+          <div style="height:10px;background:rgba(255,255,255,0.06);border-radius:3px;width:60%"></div>
+        </div>
+        <div style="display:grid;grid-template-rows:1fr 1fr;gap:10px">
+          <div style="border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:14px"><div style="font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px">This month</div><div style="font-family:var(--serif);color:#fff;font-size:22px">€2,184</div></div>
+          <div style="border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:14px"><div style="font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px">Active students</div><div style="font-family:var(--serif);color:#fff;font-size:22px">28</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-layout">
+  <aside class="cs-toc">
+    <h5>Contents</h5>
+    <ol>
+      <li><a href="#overview" data-scroll>Overview</a></li>
+      <li><a href="#problem" data-scroll>The problem</a></li>
+      <li><a href="#research" data-scroll>Research</a></li>
+      <li><a href="#strategy" data-scroll>Strategy</a></li>
+      <li><a href="#dive1" data-scroll>Dual onboarding</a></li>
+      <li><a href="#dive2" data-scroll>Tutor dashboard</a></li>
+      <li><a href="#results" data-scroll>Impact</a></li>
+      <li><a href="#reflection" data-scroll>Reflection</a></li>
+    </ol>
+    <div class="progress-wrap">
+      <div class="progress"><span id="pctLabel">0%</span><span>read</span></div>
+      <div class="bar"></div>
+    </div>
+  </aside>
+
+  <article class="cs-article">
+    <p class="lede reveal">Tutorly needed a platform that worked for two fundamentally different people. I designed the entire product architecture, both role-specific experiences, and a scalable component system that supported everything from video lessons to earnings tracking — <em>without bloating the interface</em>.</p>
+
+    <div class="sec" id="overview">
+      <div class="sec-label">01 — Overview</div>
+      <h2 class="reveal">One platform, two products.</h2>
+      <p class="reveal">Most online learning platforms are built for one side of the market. Tools designed for tutors are clunky for students. Tools optimized for students give tutors almost no control over their own business. Tutorly needed to serve both — not with a one-size-fits-all interface, but with two purpose-built experiences inside the same product.</p>
+    </div>
+
+    <div class="sec" id="problem">
+      <div class="sec-label">02 — Problem</div>
+      <h2 class="reveal">Hidden complexity, both ways.</h2>
+      <p class="reveal">The core tension: complexity for tutors had to stay invisible to students. Every feature added for one role was a potential source of confusion for the other. A toggle-based "switch roles" model would have shipped a compromised experience to both sides.</p>
+    </div>
+
+    <div class="sec" id="research">
+      <div class="sec-label">03 — Research</div>
+      <h2 class="reveal">Twelve discovery interviews.</h2>
+      <p class="reveal">I ran interviews with 12 users — 6 current tutors and 6 students across different subject areas and age groups. Three patterns became the design foundation:</p>
+      <ul class="reveal">
+        <li><strong>Students don't want to manage — they want to progress.</strong> Every extra click between "open the app" and "start the lesson" caused drop-off. Progress visibility wasn't a nice-to-have — it was directly tied to whether students came back.</li>
+        <li><strong>Tutors think like business owners, not teachers.</strong> Their first questions were about earnings, scheduling, and client management — not pedagogy. The product needed to support that mindset from day one.</li>
+        <li><strong>Onboarding drop-off is where most platforms fail.</strong> Tutors who couldn't publish a course in their first session never returned. Students who couldn't book a lesson within 5 minutes never converted.</li>
+      </ul>
+    </div>
+
+    <div class="sec" id="strategy">
+      <div class="sec-label">04 — Strategy</div>
+      <h2 class="reveal">Two products sharing one <em>infrastructure</em>.</h2>
+      <p class="reveal">I made the early call to treat students and tutors as two separate products sharing one infrastructure — not one product with role toggles. That meant separate onboarding flows tuned to each role's first-use goal; role-specific dashboards, not a universal home screen; and a shared design system under the hood so engineering could build once.</p>
+      <p class="reveal">I deliberately deprioritized the social layer (reviews, ratings, Q&A) for v1. It added complexity without addressing the core activation problem. The first release focused on three things: <strong>discovery, booking, and progress</strong> — the minimum loop to make Tutorly genuinely useful on day one.</p>
+    </div>
+
+    <div class="sec" id="dive1">
+      <div class="sec-label">05 — Deep dive 01</div>
+      <h2 class="reveal">Dual onboarding.</h2>
+      <p class="reveal">The initial flow was a single linear path that asked both students and tutors to complete the same steps before they could do anything meaningful. Tutors answered questions about their learning goals. Students were asked to set up payment before they'd seen a single tutor profile. The result: high drop-off from both sides.</p>
+
+      <h3>The decision</h3>
+      <p class="reveal">I split onboarding into two purpose-built paths, each ending at the user's <em>first real action</em>, not at email confirmation.</p>
+      <ul class="reveal">
+        <li><strong>For tutors:</strong> bio → availability → profile live. The finish line was a shareable profile URL. Seeing their own profile, bookable and real, was the activation moment.</li>
+        <li><strong>For students:</strong> subject or goal → tutor browse → profile view → book. The flow was designed to reach the first tutor profile within 3 taps. Account details and payment setup happened after the student had already chosen someone.</li>
+      </ul>
+      <p class="reveal">Every field not essential to the first session was deferred to a post-activation prompt.</p>
+
+      <figure class="grid2 reveal">
+        <div class="img">
+          <div class="panel"><div class="abs-glow violet"></div><div class="abs-card"><div class="placeholder"><small>Tutor path</small>3 screens</div></div></div>
+          <div class="panel"><div class="abs-glow fresh"></div><div class="abs-card"><div class="placeholder"><small>Student path</small>3 screens</div></div></div>
+        </div>
+        <figcaption><span>Fig. 01 — Onboarding flows side-by-side, with divergence after role selection.</span><span>04 / 09</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="sec" id="dive2">
+      <div class="sec-label">06 — Deep dive 02</div>
+      <h2 class="reveal">The tutor dashboard.</h2>
+      <p class="reveal">Tutors needed to manage schedules, monitor earnings, track students, assign homework, and run video sessions — all without the interface becoming a second job.</p>
+
+      <h3>The decision</h3>
+      <p class="reveal">I designed the dashboard around <em>time</em>, not feature categories. The top section always shows the next lesson. Earnings and pending actions sit below as secondary context. Deep management flows — course editor, student progress, withdrawals — live one tap deeper.</p>
+
+      <h3>Trade-offs</h3>
+      <p class="reveal"><strong>Shared component system vs. divergent experiences.</strong> One design system underneath two distinct experiences. Engineering moved faster without UX inconsistency — at the cost of more upfront design work, since every component had to be thought through in both contexts.</p>
+      <p class="reveal"><strong>Video lessons in v1.</strong> The team wanted to build native video conferencing. I pushed back. Integrating a proven third-party solution for v1 let us focus design effort on the surrounding context — pre-lesson prep, in-lesson materials, post-lesson follow-up — which was where the real differentiation lived.</p>
+      <p class="reveal"><strong>Homework templates.</strong> First iteration required tutors to build homework from scratch every time. After testing I introduced templates. Reuse rate in beta: ~74%.</p>
+    </div>
+
+    <div class="sec" id="results">
+      <div class="sec-label">07 — Impact</div>
+      <h2 class="reveal">The <em>numbers</em>.</h2>
+      <div class="results-band reveal">
+        <div class="stat">
+          <div class="k">Onboarding completion</div>
+          <div class="v">+<em>40%</em></div>
+          <div class="c">vs. initial prototype</div>
+        </div>
+        <div class="stat">
+          <div class="k">Homework template reuse</div>
+          <div class="v">~<em>74%</em></div>
+          <div class="c">tutor adoption in beta</div>
+        </div>
+        <div class="stat">
+          <div class="k">Design system</div>
+          <div class="v"><em>50+</em></div>
+          <div class="c">components across student & tutor</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec" id="reflection">
+      <div class="sec-label">08 — Reflection</div>
+      <h2 class="reveal">Two simple things, not one <em>complex</em> one.</h2>
+      <p class="reveal">Designing for two user types inside one product isn't about compromise — it's about identifying where the experiences can share infrastructure and where they must diverge completely. The temptation is to find a universal solution. The better answer is usually to build two simple things instead of one complex one.</p>
+      <p class="reveal">Progress visibility didn't just improve retention. It changed how students talked about the product — from "I use Tutorly" to "I'm working toward my certificate." Framing the product around progress rather than features was the most impactful shift of the whole project.</p>
+    </div>
+  </article>
+</section>
+
+<a class="next-cs hoverable" href="case-fractl.html" data-magnetic>
+  <div>
+    <div class="label">Next case — 04 / 06</div>
+    <div class="title">Fractl →</div>
+  </div>
+  <div class="preview">
+    <div class="abs-glow deep"></div>
+    <div class="abs-card"><div class="placeholder">Fractl</div></div>
+  </div>
+</a>
+
+<footer class="footer">
+  <div class="footer-big">Bovt <em>Anastasia</em> — 2026</div>
+  <div class="footer-row">
+    <div class="col"><h5>Index</h5><a href="index.html#work">Work</a><a href="projects.html">All projects</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></div>
+    <div class="col"><h5>Elsewhere</h5><a href="#">Twitter</a><a href="#">LinkedIn</a><a href="#">Read.cv</a><a href="#">Are.na</a></div>
+    <div class="col"><h5>Colophon</h5><span>Set in Instrument Serif & Inter Tight.</span></div>
+    <div class="col" style="text-align:right"><h5>Status</h5><span style="color:var(--fg)">Available · Summer '26</span><br><span>Lisbon, Portugal</span></div>
+  </div>
+</footer>
+
+<script src="case.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Index — Anastasia Bovt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css" />
+<style>
+.page-top {
+  padding: 160px var(--gutter) 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+}
+.page-top h1 {
+  font-family: var(--serif);
+  font-size: clamp(56px, 10vw, 160px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.page-top h1 em { font-style: italic; color: var(--accent); }
+.page-top .note {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--fg-3);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  max-width: 42ch;
+  justify-self: end;
+  text-align: right;
+}
+
+/* Filters */
+.filters {
+  position: sticky;
+  top: 72px;
+  z-index: 50;
+  padding: 20px var(--gutter);
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.filter-group {
+  display: flex; gap: 4px; flex-wrap: wrap;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.filter-group button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--fg-2);
+  transition: all .25s var(--ease);
+}
+.filter-group button:hover { color: var(--fg); border-color: var(--line-2); }
+.filter-group button.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.view-toggle {
+  display: flex; gap: 4px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.view-toggle button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--fg-3);
+  border: 1px solid transparent;
+  transition: all .25s var(--ease);
+}
+.view-toggle button.on { border-color: var(--line-2); color: var(--fg); }
+
+/* Index list view */
+.idx-list { padding: 20px var(--gutter) 40px; }
+.idx-row {
+  display: grid;
+  grid-template-columns: 60px 2fr 1fr 1fr 80px 40px;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+  color: var(--fg);
+  position: relative;
+  transition: color .3s var(--ease);
+}
+.idx-row:hover { color: var(--accent); }
+.idx-row .num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--fg-3);
+  letter-spacing: 0.08em;
+}
+.idx-row:hover .num { color: var(--accent); }
+.idx-row .title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 48px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transition: transform .5s var(--ease-out);
+}
+.idx-row:hover .title { transform: translateX(6px); }
+.idx-row .title em { font-style: italic; }
+.idx-row .desc {
+  font-size: 13px;
+  color: var(--fg-3);
+  line-height: 1.4;
+}
+.idx-row .tags {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.idx-row .year {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--fg-3);
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+.idx-row .arr {
+  font-family: var(--sans);
+  font-size: 18px;
+  color: var(--fg-3);
+  text-align: right;
+  transition: transform .4s var(--ease), color .3s var(--ease);
+}
+.idx-row:hover .arr { transform: translate(4px, -4px); color: var(--accent); }
+
+/* Preview that follows on hover */
+.idx-preview {
+  position: fixed;
+  pointer-events: none;
+  width: 360px;
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  z-index: 50;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.94);
+  transition: opacity .35s var(--ease), transform .5s var(--ease-out);
+  box-shadow: 0 30px 80px rgba(0,0,0,.5);
+}
+.idx-preview.on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.idx-preview .slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity .3s var(--ease);
+}
+.idx-preview .slide.on { opacity: 1; }
+
+/* Grid view — reuse .ph from homepage embedded here */
+.idx-grid { padding: 20px var(--gutter) 40px; display: none; }
+.idx-grid.on { display: block; }
+.idx-list.off { display: none; }
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 20px;
+}
+.gc {
+  display: block;
+  color: var(--fg);
+}
+.gc .shot {
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  position: relative;
+  transition: border-color .3s var(--ease);
+}
+.gc:hover .shot { border-color: var(--line-2); }
+.gc .shot .image { position:absolute; inset:0; transition: transform 1.1s var(--ease-out); }
+.gc:hover .shot .image { transform: scale(1.04); }
+.gc .meta {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-top: 14px;
+  gap: 12px;
+}
+.gc .meta .t {
+  font-family: var(--serif);
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+.gc .meta .y {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--fg-3);
+}
+.gc .sub {
+  font-size: 12px;
+  color: var(--fg-3);
+  padding-top: 4px;
+}
+
+/* Placeholder styles (copied minimal set) */
+.ph { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.ph .glow { position:absolute; inset:-20%; filter:blur(40px); opacity:.85; }
+.ph-01 { background:#181820;} .ph-01 .glow { background: radial-gradient(circle at 30% 40%, #a78bff, transparent 60%); }
+.ph-02 { background:#1d1818;} .ph-02 .glow { background: radial-gradient(circle at 40% 50%, #ff8a6a, transparent 55%); }
+.ph-03 { background:#12201a;} .ph-03 .glow { background: radial-gradient(circle at 40% 60%, #7affc4, transparent 55%); }
+.ph-04 { background:#1a1820;} .ph-04 .glow { background: radial-gradient(circle at 50% 50%, #c4a8ff, transparent 60%); }
+.ph-05 { background:#121a22;} .ph-05 .glow { background: radial-gradient(circle at 20% 30%, #7ac8ff, transparent 55%); }
+.ph-06 { background:#201a14;} .ph-06 .glow { background: radial-gradient(circle at 30% 70%, #ffb86a, transparent 55%); }
+.ph-07 { background:#1f1a18;} .ph-07 .glow { background: radial-gradient(circle at 60% 60%, #ff9a6a, transparent 55%); }
+.ph-08 { background:#181e25;} .ph-08 .glow { background: radial-gradient(circle at 30% 30%, #6ac8ff, transparent 55%); }
+.ph-09 { background:#20181c;} .ph-09 .glow { background: radial-gradient(circle at 70% 70%, #ff6a94, transparent 55%); }
+.ph-10 { background:#1a2018;} .ph-10 .glow { background: radial-gradient(circle at 60% 40%, #b8ff7a, transparent 55%); }
+.ph-11 { background:#1c1c22;} .ph-11 .glow { background: radial-gradient(circle at 50% 50%, #a78bff, transparent 55%); }
+.ph-12 { background:#1f1a22;} .ph-12 .glow { background: radial-gradient(circle at 30% 80%, #e07aff, transparent 55%); }
+.ph .label {
+  position: relative; z-index: 2;
+  font-family: var(--serif);
+  font-style: italic;
+  color: rgba(255,255,255,0.9);
+  font-size: clamp(28px, 5vw, 64px);
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 960px) {
+  .idx-row { grid-template-columns: 40px 1fr 60px 24px; }
+  .idx-row .desc, .idx-row .tags { display: none; }
+  .grid-cards { grid-template-columns: repeat(2, 1fr); }
+  .page-top { grid-template-columns: 1fr; }
+  .page-top .note { justify-self: start; text-align: left; }
+  .idx-preview { display: none; }
+}
+@media (max-width: 560px) {
+  .grid-cards { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="cursor-on" data-hero="spotlight" data-layout="grid" data-screen-label="All Projects">
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <span class="dot"></span>
+    <span>Anastasia Bovt</span>
+    <span class="role">— Product Designer</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="projects.html" class="active">Index</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <a class="nav-cta hoverable" href="index.html#contact" data-magnetic>
+    Let's talk <span class="arr">↗</span>
+  </a>
+</nav>
+
+<header class="page-top">
+  <h1 class="reveal">The <em>index</em>,<br>2021–2026</h1>
+  <p class="note reveal d1">Every shipped project, end to end. Six entries, filterable. Hover a row to preview.</p>
+</header>
+
+<div class="filters">
+  <div class="filter-group" data-filter>
+    <button class="on" data-cat="all">All <span style="color:var(--fg-4)">· 6</span></button>
+    <button data-cat="product">Product</button>
+    <button data-cat="ux">UX/UI</button>
+    <button data-cat="mobile">Mobile</button>
+    <button data-cat="web">Web</button>
+    <button data-cat="systems">Systems</button>
+  </div>
+  <div class="view-toggle" data-view>
+    <button class="on" data-v="list">List</button>
+    <button data-v="grid">Grid</button>
+  </div>
+</div>
+
+<!-- Hover preview panel -->
+<div class="idx-preview" id="preview"></div>
+
+<div class="idx-list" id="listview">
+</div>
+
+<div class="idx-grid" id="gridview">
+  <div class="grid-cards" id="gridcards"></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-big">Bovt <em>Anastasia</em> — 2026</div>
+  <div class="footer-row">
+    <div class="col">
+      <h5>Index</h5>
+      <a href="index.html#work">Work</a>
+      <a href="projects.html">All projects</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="col">
+      <h5>Elsewhere</h5>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Read.cv</a>
+      <a href="#">Are.na</a>
+    </div>
+    <div class="col">
+      <h5>Colophon</h5>
+      <span>Set in Instrument Serif & Inter Tight.</span>
+    </div>
+    <div class="col" style="text-align:right">
+      <h5>Status</h5>
+      <span style="color:var(--fg)">Available · Summer '26</span><br>
+      <span>Lisbon, Portugal</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const PROJECTS = [
+  { n:"01", title:"Yezzz",      em:"Telecom",  year:2026,        cat:["product","mobile","ux"],   desc:"Activation funnel rebuilt around comprehension — +69.1% conversion on an already-strong offer.",     tags:["Product","Research","Mobile"],     ph:"ph-01", href:"case-yezzz.html" },
+  { n:"02", title:"Phlex",      em:"Sport",    year:"2022–25",   cat:["product","mobile","web","systems"], desc:"Three years on a swim performance tracker — MVP, gamification, leagues, and a coach dashboard.", tags:["Lead PD","Mobile","Web"],     ph:"ph-03", href:"case-phlex.html" },
+  { n:"03", title:"Tutorly",    em:"Edu",      year:2023,        cat:["product","ux","web","systems"], desc:"Two products sharing one infrastructure. Separate onboarding for students and tutors.",          tags:["Lead PD","End-to-end","System"], ph:"ph-05", href:"case-tutorly.html" },
+  { n:"04", title:"Fractl",     em:"Dev tools", year:2023,       cat:["product","systems","web"], desc:"\"Three modes, one model.\" A low-code platform that meets developers and builders both.",          tags:["Lead PD","0→1","System"],         ph:"ph-04", href:"case-fractl.html" },
+  { n:"05", title:"OLAS",       em:"Safety",   year:"2022–23",   cat:["ux","mobile"],             desc:"Man-overboard alerts for sailors. An interface designed for sun glare, motion, wet screens, panic.", tags:["Lead UI/UX","Mobile","Hardware"], ph:"ph-02", href:"case-olas.html" },
+  { n:"06", title:"Care You",   em:"Health",   year:2022,        cat:["product","ux","mobile","web","systems"], desc:"Connecting patients, carers, clinicians and insurers — value lives in coordination, not features.", tags:["UI/UX","Multi-role","System"], ph:"ph-06", href:"case-careyou.html" }
+];
+
+function render() {
+  const active = document.querySelector('[data-filter] .on').dataset.cat;
+  const list = document.getElementById("listview");
+  const grid = document.getElementById("gridcards");
+  const filtered = PROJECTS.filter(p => active === "all" || p.cat.includes(active));
+
+  list.innerHTML = filtered.map((p, i) => `
+    <a class="idx-row hoverable" href="${p.href}" data-idx="${i}">
+      <div class="num">${p.n}</div>
+      <div class="title">${p.title.replace(/(\S+)$/,"<em>$1</em>")}</div>
+      <div class="desc">${p.desc}</div>
+      <div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join(" · ")}</div>
+      <div class="year">${p.year}</div>
+      <div class="arr">↗</div>
+    </a>
+  `).join("");
+
+  grid.innerHTML = filtered.map(p => `
+    <a class="gc hoverable" href="${p.href}">
+      <div class="shot"><div class="image ph ${p.ph}"><div class="glow"></div><div class="label">${p.em}</div></div></div>
+      <div class="meta"><div class="t">${p.title}</div><div class="y">${p.year}</div></div>
+      <div class="sub">${p.desc}</div>
+    </a>
+  `).join("");
+
+  // Wire hover preview
+  const pv = document.getElementById("preview");
+  pv.innerHTML = filtered.map((p, i) => `
+    <div class="slide" data-slide="${i}"><div class="ph ${p.ph}" style="position:absolute;inset:0"><div class="glow"></div><div class="label">${p.em}</div></div></div>
+  `).join("");
+
+  list.querySelectorAll(".idx-row").forEach(row => {
+    const idx = row.dataset.idx;
+    row.addEventListener("mouseenter", () => {
+      pv.classList.add("on");
+      pv.querySelectorAll(".slide").forEach(s => s.classList.toggle("on", s.dataset.slide === idx));
+    });
+    row.addEventListener("mouseleave", () => pv.classList.remove("on"));
+    row.addEventListener("mousemove", (e) => {
+      pv.style.left = (e.clientX + 140) + "px";
+      pv.style.top = (e.clientY) + "px";
+    });
+  });
+}
+
+document.querySelectorAll("[data-filter] button").forEach(b => {
+  b.addEventListener("click", () => {
+    document.querySelectorAll("[data-filter] button").forEach(x => x.classList.remove("on"));
+    b.classList.add("on");
+    render();
+  });
+});
+document.querySelectorAll("[data-view] button").forEach(b => {
+  b.addEventListener("click", () => {
+    document.querySelectorAll("[data-view] button").forEach(x => x.classList.remove("on"));
+    b.classList.add("on");
+    const v = b.dataset.v;
+    document.getElementById("listview").classList.toggle("off", v !== "list");
+    document.getElementById("gridview").classList.toggle("on", v === "grid");
+  });
+});
+
+render();
+</script>
+<script src="shared.js"></script>
+</body>
+</html>
