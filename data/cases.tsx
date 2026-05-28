@@ -79,7 +79,7 @@ export const cases: CaseData[] = [
         <p class="reveal">When the conversion rate stays low on an offer that should be obvious, the barrier is experiential, not motivational. The data agreed: <strong>87% of users dropped off at the very first screen</strong>, before ever reaching the activation flow.</p>
         <figure class="reveal">
           <div class="img img-photo">
-            <img src="/images/yezzz-hero.png" alt="Yezzz activation screen" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <img src="/images/yezzz-hero.webp" alt="Yezzz activation screen" style="width:100%;height:100%;object-fit:cover;display:block;" />
           </div>
         </figure>
       </div>
