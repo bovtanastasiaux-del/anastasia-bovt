@@ -364,6 +364,15 @@
   margin-bottom: 12px;
 }
 
+/* Photo figure — natural aspect ratio */
+.cs-article figure .img.img-photo {
+  aspect-ratio: unset;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
 /* Two-column figure variant */
 .cs-article figure.grid2 .img {
   display: grid;

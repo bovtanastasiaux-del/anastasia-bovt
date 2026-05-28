@@ -78,10 +78,8 @@ export const cases: CaseData[] = [
         <p class="reveal">The unique value proposition was simple: get mobile coverage you effectively pay for through your regular grocery shopping. The user base was already there. The blocker wasn't motivation — it was comprehension and trust.</p>
         <p class="reveal">When the conversion rate stays low on an offer that should be obvious, the barrier is experiential, not motivational. The data agreed: <strong>87% of users dropped off at the very first screen</strong>, before ever reaching the activation flow.</p>
         <figure class="reveal">
-          <div class="img">
-            <div class="abs-fill" style="background:linear-gradient(135deg,#1a1822,#1a1a24)"></div>
-            <div class="abs-glow violet"></div>
-            <div class="abs-card"><div class="placeholder"><small>Funnel · 138,482 → 3,251</small>87%<br><span style="font-size:0.4em">drop at step one</span></div></div>
+          <div class="img img-photo">
+            <img src="/images/yezzz-hero.png" alt="Yezzz activation screen" style="width:100%;height:100%;object-fit:cover;display:block;" />
           </div>
         </figure>
       </div>
