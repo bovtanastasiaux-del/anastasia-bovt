@@ -78,9 +78,7 @@ export const cases: CaseData[] = [
         <p class="reveal">The unique value proposition was simple: get mobile coverage you effectively pay for through your regular grocery shopping. The user base was already there. The blocker wasn't motivation — it was comprehension and trust.</p>
         <p class="reveal">When the conversion rate stays low on an offer that should be obvious, the barrier is experiential, not motivational. The data agreed: <strong>87% of users dropped off at the very first screen</strong>, before ever reaching the activation flow.</p>
         <figure class="reveal">
-          <div class="img img-photo">
-            <img src="/images/yezzz-hero.webp" alt="Yezzz activation screen" style="width:100%;height:100%;object-fit:cover;display:block;" />
-          </div>
+          <img src="/images/yezzz-hero.webp" alt="Yezzz activation screen" class="figure-photo" />
         </figure>
       </div>
 
