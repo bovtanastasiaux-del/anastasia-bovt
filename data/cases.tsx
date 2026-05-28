@@ -38,19 +38,7 @@ export const cases: CaseData[] = [
     ],
     heroGlow: 'violet',
     heroInnerHTML: `
-      <div class="glow violet"></div>
-      <div class="chrome-lg mobile-hero">
-        <div class="tbar"><span class="url" style="margin-left:0">9:41 · Yezzz</span></div>
-        <div class="app" style="gap:14px">
-          <div class="hd">Free mobile.<br>Just <em>shop as usual.</em></div>
-          <div style="display:flex;flex-direction:column;gap:8px">
-            <div style="height:10px;background:rgba(255,255,255,0.08);border-radius:3px;width:88%"></div>
-            <div style="height:10px;background:rgba(255,255,255,0.06);border-radius:3px;width:72%"></div>
-            <div style="height:10px;background:rgba(255,255,255,0.06);border-radius:3px;width:60%"></div>
-          </div>
-          <div style="margin-top:auto;padding:14px;border-radius:8px;background:var(--accent);color:#0e0e10;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;text-align:center">Activate Yezzz</div>
-        </div>
-      </div>
+      <img src="/images/yezzz-hero.webp" alt="Yezzz activation screen" style="width:100%;height:100%;object-fit:cover;display:block;" />
     `,
     toc: [
       { id: 'overview', label: 'Overview' },
@@ -77,9 +65,6 @@ export const cases: CaseData[] = [
         <h2 class="reveal">A 2.35% conversion rate on a <em>strong</em> offer</h2>
         <p class="reveal">The unique value proposition was simple: get mobile coverage you effectively pay for through your regular grocery shopping. The user base was already there. The blocker wasn't motivation — it was comprehension and trust.</p>
         <p class="reveal">When the conversion rate stays low on an offer that should be obvious, the barrier is experiential, not motivational. The data agreed: <strong>87% of users dropped off at the very first screen</strong>, before ever reaching the activation flow.</p>
-        <figure class="reveal">
-          <img src="/images/yezzz-hero.webp" alt="Yezzz activation screen" class="figure-photo" />
-        </figure>
       </div>
 
       <div class="sec" id="research">
