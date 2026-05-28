@@ -34,7 +34,7 @@ export const cases: CaseData[] = [
       { k: 'Role', v: 'Product Designer' },
       { k: 'Platforms', v: 'iOS · Android' },
       { k: 'Scope', v: 'Funnel & conversion redesign' },
-      { k: 'Outcome', v: '+69.1% conversion rate' },
+      { k: 'Outcome', v: '7 of 8 hypotheses validated through testing' },
     ],
     heroGlow: 'violet',
     heroInnerHTML: `
@@ -68,13 +68,13 @@ export const cases: CaseData[] = [
 
       <div class="sec" id="overview">
         <div class="sec-label">01 — Overview</div>
-        <h2 class="reveal">A product that worked — but couldn't be <em>read</em>.</h2>
+        <h2 class="reveal">A product that worked — but couldn't be <em>read</em></h2>
         <p class="reveal">Yezzz lives inside Silpo, Ukraine's largest grocery app, with millions of active users already loyal to the brand. Demand wasn't the issue. I led the redesign of the full activation experience — from first impression through post-activation — to figure out where comprehension broke down, why trust eroded, and what it would take to make a compelling product feel as compelling as it actually was.</p>
       </div>
 
       <div class="sec" id="problem">
         <div class="sec-label">02 — Problem</div>
-        <h2 class="reveal">A 2.35% conversion rate on a <em>strong</em> offer.</h2>
+        <h2 class="reveal">A 2.35% conversion rate on a <em>strong</em> offer</h2>
         <p class="reveal">The unique value proposition was simple: get mobile coverage you effectively pay for through your regular grocery shopping. The user base was already there. The blocker wasn't motivation — it was comprehension and trust.</p>
         <p class="reveal">When the conversion rate stays low on an offer that should be obvious, the barrier is experiential, not motivational. The data agreed: <strong>87% of users dropped off at the very first screen</strong>, before ever reaching the activation flow.</p>
         <figure class="reveal">
@@ -83,19 +83,18 @@ export const cases: CaseData[] = [
             <div class="abs-glow violet"></div>
             <div class="abs-card"><div class="placeholder"><small>Funnel · 138,482 → 3,251</small>87%<br><span style="font-size:0.4em">drop at step one</span></div></div>
           </div>
-          <figcaption><span>Fig. 01 — Funnel visualization. Users entering the Yezzz screen vs. completing activation.</span><span>01 / 09</span></figcaption>
         </figure>
       </div>
 
       <div class="sec" id="research">
         <div class="sec-label">03 — Research &amp; discovery</div>
-        <h2 class="reveal">Fifteen interviews, three user groups.</h2>
+        <h2 class="reveal">Fifteen interviews, three user groups</h2>
         <p class="reveal">We ran 15 in-depth interviews across three groups defined by their stage of interaction with Yezzz. Each session focused on three areas: the activation experience itself, comprehension of the service model, and what drives or blocks trust when switching mobile operators.</p>
         <h3>What we heard</h3>
         <ul class="reveal">
-          <li><strong>Before activation.</strong> Users who didn't understand the mechanic upfront simply lost interest. The offer read like a one-time promotion, not an ongoing service model.</li>
-          <li><strong>During activation.</strong> The flow confused users. Many couldn't tell if they were completing steps correctly. The number portability process felt opaque and high-stakes — even though users reported being less afraid of switching operators than we'd assumed.</li>
-          <li><strong>After activation.</strong> Users couldn't track their tariff status. They didn't know which billing period was active, whether they'd met the spending condition, or what would happen if they fell short.</li>
+          <li><div class="li-content"><strong>Before activation</strong><span>Users who didn't understand the mechanic upfront simply lost interest. The offer read like a one-time promotion, not an ongoing service model.</span></div></li>
+          <li><div class="li-content"><strong>During activation</strong><span>The flow confused users. Many couldn't tell if they were completing steps correctly. The number portability process felt opaque and high-stakes — even though users reported being less afraid of switching operators than we'd assumed.</span></div></li>
+          <li><div class="li-content"><strong>After activation</strong><span>Users couldn't track their tariff status. They didn't know which billing period was active, whether they'd met the spending condition, or what would happen if they fell short.</span></div></li>
         </ul>
         <blockquote class="reveal">"Did I meet the condition in February? Will I get free service in March? How am I supposed to know?"<cite>— Tetiana, activated user</cite></blockquote>
         <p class="reveal">The consistent theme across all three groups: <strong>the product was working. The communication around it wasn't.</strong></p>
@@ -103,7 +102,7 @@ export const cases: CaseData[] = [
 
       <div class="sec" id="strategy">
         <div class="sec-label">04 — Strategy</div>
-        <h2 class="reveal">Fifteen hypotheses, two real problems.</h2>
+        <h2 class="reveal">Fifteen hypotheses, two real problems</h2>
         <p class="reveal">Research surfaced ~15 hypotheses. We scored each using the ICE framework to separate high-leverage interventions from noise, which produced a clear priority stack. The highest-priority issues clustered around two distinct problems:</p>
         <ul class="reveal">
           <li><strong>Comprehension before activation.</strong> Users needed to understand what they were signing up for before being asked to act. Any friction introduced before comprehension was established caused drop-off — and it did.</li>
@@ -115,13 +114,12 @@ export const cases: CaseData[] = [
             <div class="abs-glow violet"></div>
             <div class="abs-card"><div class="placeholder"><small>ICE scoring matrix</small>Impact × Confidence × Ease</div></div>
           </div>
-          <figcaption><span>Fig. 02 — ICE matrix used to triage research hypotheses.</span><span>03 / 09</span></figcaption>
         </figure>
       </div>
 
       <div class="sec" id="dive1">
         <div class="sec-label">05 — Deep dive 01</div>
-        <h2 class="reveal">Transparent conditions, <em>before</em> activation.</h2>
+        <h2 class="reveal">Transparent conditions, <em>before</em> activation</h2>
         <p class="reveal">Users arriving at the Yezzz screen didn't know what the service required of them. The spending condition (₴2,000/month) was only revealed after the first purchase. Without that information upfront, the offer felt ambiguous — and ambiguous offers get ignored.</p>
         <h3>The decision</h3>
         <p class="reveal">I restructured the main screen to lead with the mechanic, not the marketing. The value proposition — what you get, what it costs, how the monthly cycle works — was explained in plain language before any action was requested. Benefits were listed clearly. The ₴200 fallback tariff was shown alongside the free tier so users could see the full picture.</p>
@@ -131,13 +129,12 @@ export const cases: CaseData[] = [
             <div class="panel"><div class="abs-glow coral"></div><div class="abs-card"><div class="placeholder"><small>Before</small>Vague</div></div></div>
             <div class="panel"><div class="abs-glow violet"></div><div class="abs-card"><div class="placeholder"><small>After</small>Mechanic-first</div></div></div>
           </div>
-          <figcaption><span>Fig. 03 — Original marketing-forward landing vs. redesigned mechanic-first screen.</span><span>05 / 09</span></figcaption>
         </figure>
       </div>
 
       <div class="sec" id="dive2">
         <div class="sec-label">06 — Deep dive 02</div>
-        <h2 class="reveal">Status visibility, <em>after</em> activation.</h2>
+        <h2 class="reveal">Status visibility, <em>after</em> activation</h2>
         <p class="reveal">Activated users had no clear way to track their tariff status. They couldn't see remaining minutes or data, identify which billing cycle was active, or know whether they were on track to meet the monthly spending condition. This wasn't just a UX gap — it was a trust problem. Users who can't tell if a product is working for them assume it isn't.</p>
         <h3>The decision</h3>
         <p class="reveal">I added visual usage progress for minutes and data directly to the account screen — a quick-read status that answered the most common post-activation questions without requiring any navigation. Billing cycle dates and free-package conditions were surfaced inline, with clear language about what the current cycle required and when it would reset.</p>
@@ -147,47 +144,46 @@ export const cases: CaseData[] = [
             <div class="panel"><div class="abs-glow amber"></div><div class="abs-card"><div class="placeholder"><small>Before</small>Sparse</div></div></div>
             <div class="panel"><div class="abs-glow fresh"></div><div class="abs-card"><div class="placeholder"><small>After</small>At-a-glance</div></div></div>
           </div>
-          <figcaption><span>Fig. 04 — Account screen, before and after.</span><span>07 / 09</span></figcaption>
         </figure>
       </div>
 
       <div class="sec" id="onboarding">
         <div class="sec-label">07 — Onboarding</div>
-        <h2 class="reveal">Two flows, two moments.</h2>
+        <h2 class="reveal">Two flows, two moments</h2>
         <p class="reveal">Two onboarding flows were added at different points in the funnel, each solving a distinct problem.</p>
         <ul class="reveal">
-          <li><strong>Pre-activation.</strong> New visitors to the Yezzz section had no context for what the service was. A brief flow explains what Yezzz is and what it offers before asking for any commitment.</li>
-          <li><strong>Post-activation.</strong> Newly activated users didn't know where to find their package status. A guided walkthrough of the account screen — package status, balance, billing cycle — appears immediately after activation.</li>
+          <li><div class="li-content"><strong>Pre-activation</strong><span>New visitors to the Yezzz section had no context for what the service was. A brief flow explains what Yezzz is and what it offers before asking for any commitment.</span></div></li>
+          <li><div class="li-content"><strong>Post-activation</strong><span>Newly activated users didn't know where to find their package status. A guided walkthrough of the account screen — package status, balance, billing cycle — appears immediately after activation.</span></div></li>
         </ul>
       </div>
 
       <div class="sec" id="validation">
         <div class="sec-label">08 — Validation</div>
-        <h2 class="reveal">Tested with 43 participants.</h2>
+        <h2 class="reveal">Tested with 43 participants</h2>
         <p class="reveal">Updated designs were tested with 43 participants: 13 in moderated Figma sessions for behavioral depth, 30 in unmoderated tests via Maze and Lyssna for broader coverage. Testing covered three stages: first-impression comprehension, activation flow navigation, and post-activation status understanding.</p>
         <p class="reveal">Users understood tariff conditions significantly better than in the original flow and moved through activation with noticeably more confidence. Moderated sessions surfaced two edge cases that were addressed before shipping.</p>
         <div class="results-band reveal">
           <div class="stat">
-            <div class="k">Conversion rate</div>
-            <div class="v">+<em>69%</em></div>
-            <div class="c">on the redesigned activation funnel</div>
+            <div class="k">Comprehension</div>
+            <div class="v"><em>98%</em></div>
+            <div class="c">correctly explained tariff conditions — vs. 63% on the original</div>
           </div>
           <div class="stat">
-            <div class="k">First-screen drop-off</div>
-            <div class="v">−<em>54%</em></div>
-            <div class="c">from the 87% baseline</div>
+            <div class="k">Activation success</div>
+            <div class="v"><em>98%</em></div>
+            <div class="c">completed the flow without assistance</div>
           </div>
           <div class="stat">
-            <div class="k">Tested with</div>
-            <div class="v"><em>43</em></div>
-            <div class="c">moderated + unmoderated participants</div>
+            <div class="k">Hypotheses validated</div>
+            <div class="v"><em>7 / 8</em></div>
+            <div class="c">through testing</div>
           </div>
         </div>
       </div>
 
       <div class="sec" id="reflection">
         <div class="sec-label">09 — Reflection</div>
-        <h2 class="reveal">What I'd <em>keep doing</em>.</h2>
+        <h2 class="reveal">What I'd <em>keep doing</em></h2>
         <p class="reveal">The problem wasn't the product — it was the gap between what the product offered and what users understood. The work wasn't about changing the offer; it was about making it visible and believable at the right moments.</p>
         <p class="reveal">Qualitative research unlocked things analytics couldn't. The funnel showed where users dropped off. Interviews explained why. The insight that users didn't know they'd already met the conditions for free service — invisible eligibility — came entirely from conversations, not from data.</p>
         <p class="reveal">Constraints shaped better decisions. The MNP flow couldn't be redesigned due to legal requirements. The main app screen had limited real estate. Working within those boundaries pushed the work toward communication and framing rather than structural changes — which turned out to be exactly what was needed.</p>

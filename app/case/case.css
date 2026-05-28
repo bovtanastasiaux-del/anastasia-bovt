@@ -294,6 +294,12 @@
   flex-shrink: 0;
 }
 .cs-article ul li strong { color: var(--fg); font-weight: 500; }
+.cs-article ul li .li-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cs-article ul li .li-content strong { display: block; }
 
 /* Figure */
 .cs-article figure {
